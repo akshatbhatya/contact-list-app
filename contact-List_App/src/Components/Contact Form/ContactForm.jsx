@@ -1,9 +1,16 @@
 import React from 'react'
-import "ContactForm.css"
+import "./ContactForm.css"
 
 function ContactForm() {
   return (
-    <div>ContactForm</div>
+    <>
+    <div className="contact_form">
+        <form action="">
+            <label htmlFor="">Name</label>
+            <input type="text" placeholder='Enter Your Name' />
+        </form>
+    </div>
+    </>
   )
 }
 
