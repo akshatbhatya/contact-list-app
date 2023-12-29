@@ -29,12 +29,13 @@ function App() {
     if (contactsDataString) {
       try {
         contactsData = JSON.parse(contactsDataString);
+        setContactList(contactsData);
       } catch (error) {
         console.error('Error parsing contacts from localStorage:', error);
       }
     }
 
-    setContactList(contactsData);
+    
   }, []);
 
 
