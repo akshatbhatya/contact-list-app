@@ -4,6 +4,7 @@ import './App.css'
 import ContactForm from './Components/Contact Form/ContactForm'
 import { ContactListProvider } from './Contexts'
 import { useEffect } from 'react'
+import ContactItem from './Components/ContactItem/ContactItem'
 
 function App() {
   const [contacts, setContactList] = useState([])
@@ -22,34 +23,29 @@ function App() {
   }
 
 
-  useEffect(() => {
-    const contactsDataString = localStorage.getItem('contacts');
-    let contactsData = [];
-
-    if (contactsDataString) {
-      try {
-        contactsData = JSON.parse(contactsDataString);
-        setContactList(contactsData);
-      } catch (error) {
-        console.error('Error parsing contacts from localStorage:', error);
-      }
-    }
-
-    
-  }, []);
-
 
   useEffect(() => {
-    try {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    } catch (error) {
-      console.error('Error saving contacts to localStorage:', error);
-    }
-  }, [contacts]);
+    const contacts = JSON.parse(localStorage.getItem("contacts"))
 
+    if (contacts && contacts.length > 0) {
+      setContactList(contacts)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts))
+  }, [contacts])
   return (
     <ContactListProvider value={{ contacts, addContact, updateContact, removeContact }}>
       <ContactForm />
+      <br />
+      {
+        contacts.map((x) => {
+          return <ContactItem contact={x} key={Date.now()} />
+
+        })
+      }
+
     </ContactListProvider>
   )
 }
