@@ -1,10 +1,10 @@
-
 import { useState } from 'react'
 import './App.css'
 import ContactForm from './Components/Contact Form/ContactForm'
 import { ContactListProvider } from './Contexts'
 import { useEffect } from 'react'
 import ContactItem from './Components/ContactItem/ContactItem'
+import SearchBar from './Components/SearchBar/SearchBar'
 
 function App() {
   const [contacts, setContactList] = useState([])
@@ -37,11 +37,14 @@ function App() {
   }, [contacts])
   return (
     <ContactListProvider value={{ contacts, addContact, updateContact, removeContact }}>
+
+      <SearchBar contacts={contacts}/>
+      <br />
       <ContactForm />
       <br />
       {
         contacts.map((x) => {
-          return <ContactItem contact={x} key={Date.now()} />
+          return <ContactItem contact={x} key={x.id} />
 
         })
       }
