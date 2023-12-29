@@ -57,3 +57,22 @@
     outline: none;
     border: none;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .contact_form {
+        margin: 50px auto;
+        width: 210px;
+    
+}
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-form-section {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    
+    }
+
+}
