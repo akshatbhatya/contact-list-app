@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.searchbar-inputBox {
+    background: #000;
+    padding: 10px;
+
+}
+
+
+.searchbar-inputBox button {
+    appearance: none;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 0px 6px 6px 0px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    outline: none;
+    border: none;
+}
+
+
+.filter_Content-section {
+    background: white;
+    color: black;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    margin: 30px auto;
+    padding: 50px 0px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    color: white;
+    gap: 12px;
+}
+
+
+
+.searchbar-inputBox input {
+    color: inherit;
+    padding: 12px 10px;
+    width: 20vw;
+    border-radius: 6px 0px 0px 6px;
+    border: none;
+    outline: none;
+    color: #000;
+}
+
+.searchbar-inputBox {
+    text-align: center;
+}
+
+.filtereddataShow p{
+    font-size: 18px;
+    
+}

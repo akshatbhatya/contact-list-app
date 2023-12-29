@@ -6,7 +6,7 @@ function ContactForm() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [number, SetNumber] = useState('');
-    console.log(name,email,number);
+    console.log(name, email, number);
 
     const { addContact } = UseContactContext();
 
@@ -19,34 +19,45 @@ function ContactForm() {
         setName('')
         SetNumber('')
     }
-    
+
     return (
         <>
             <div className="contact_form">
                 <form action="">
-                    <label htmlFor="">Name</label>
-                    <input
-                        type="text"
-                        placeholder='Enter Your Name'
-                        value={name}
-                        onChange={(e) => setName(e.currentTarget.value)} />
+                    <div className="contact-form-section">
+
+                        <label htmlFor="">Name</label>
+                        <input
+                            type="text"
+                            placeholder='Enter Your Name'
+                            value={name}
+                            onChange={(e) => setName(e.currentTarget.value)} />
+                    </div>
                     <br />
                     <br />
-                    <label htmlFor="">Email</label>
-                    <input
-                        type="email"
-                        placeholder='Enter Your Email'
-                        value={email}
-                        onChange={(e) => setEmail(e.currentTarget.value)} />
+
+                    <div className="contact-form-section">
+
+                        <label htmlFor="">Email</label>
+                        <input
+                            type="email"
+                            placeholder='Enter Your Email'
+                            value={email}
+                            onChange={(e) => setEmail(e.currentTarget.value)} />
+                    </div>
                     <br />
                     <br />
-                    <label htmlFor="">Number</label>
-                    <input
-                        type="text"
-                        placeholder='Enter Your Number'
-                        value={number}
-                        onChange={(e) => SetNumber(e.currentTarget.value)}
-                    />
+
+                    <div className="contact-form-section">
+
+                        <label htmlFor="">Number</label>
+                        <input
+                            type="text"
+                            placeholder='Enter Your Number'
+                            value={number}
+                            onChange={(e) => SetNumber(e.currentTarget.value)}
+                        />
+                    </div>
                     <br />
                     <br />
                     <button type='submit' onClick={add}>Add</button>

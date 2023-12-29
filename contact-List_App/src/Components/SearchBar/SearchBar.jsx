@@ -1,19 +1,24 @@
 import React, { useState } from 'react';
 import "./SearchBar.css";
-import SearchResult from '../SearchResult/SearchResult';
 
 function SearchBar({ contacts }) {
     const [filterData, setFilterData] = useState([]);
     const [searchBar, setSearchBar] = useState("");
 
+    const [visibility, setVisibility] = useState(false)
+
     const handleFind = (e) => {
         e.preventDefault();
+        setVisibility(!visibility)
 
         const filteredData = contacts.filter((contact) =>
             contact.name === searchBar
         );
 
         setFilterData(filteredData);
+
+
+        
     };
 
     return (
@@ -26,25 +31,27 @@ function SearchBar({ contacts }) {
                 <button type='submit' onClick={handleFind}>Find</button>
             </div>
 
-           
-
-            <div>
-                <div className="filtereddataShow">
-                    {filterData.map((contact) => (
-                        <div key={contact.id}>
-                            <div className="name">
-                                <p>{contact.name}</p>
+            {
+                visibility ? <> 
+                <div className='filter_Content-section'>
+                    <div className="filtereddataShow">
+                        {filterData.map((contact) => (
+                            <div key={contact.id}>
+                                <div className="name">
+                                    <p>Name : {contact.name}</p>
+                                </div>
+                                <div className="email">
+                                    <p>Email : {contact.email}</p>
+                                </div>
+                                <div className="number">
+                                    <p> Contact : {contact.number}</p>
+                                </div>
                             </div>
-                            <div className="email">
-                                <p>{contact.email}</p>
-                            </div>
-                            <div className="number">
-                                <p>{contact.number}</p>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-            </div>
+                </> : null
+            }
         </div>
     );
 }

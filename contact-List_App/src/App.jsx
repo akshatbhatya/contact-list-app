@@ -38,7 +38,7 @@ function App() {
   return (
     <ContactListProvider value={{ contacts, addContact, updateContact, removeContact }}>
 
-      <SearchBar contacts={contacts}/>
+      <SearchBar contacts={contacts} />
       <br />
       <ContactForm />
       <br />
