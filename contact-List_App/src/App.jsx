@@ -1,13 +1,15 @@
 
+import { useState } from 'react'
 import './App.css'
 import ContactForm from './Components/Contact Form/ContactForm'
+import { ContactListProvider } from './Contexts'
 
 function App() {
-
+  const [contactList, setContactList] = useState([])
   return (
-    <>
-    <ContactForm/>
-    </>
+    <ContactListProvider value={{ contacts, addContact, updateContact, removeContact }}>
+      <ContactForm />
+    </ContactListProvider>
   )
 }
 
