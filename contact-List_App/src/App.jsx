@@ -42,6 +42,8 @@ function App() {
       <br />
       <ContactForm />
       <br />
+
+      <hr width={"50%"} className="ruler"/>
       {
         contacts.map((x) => {
           return <ContactItem contact={x} key={x.id} />

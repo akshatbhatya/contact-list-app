@@ -17,26 +17,26 @@ function ContactItem({ contact }) {
 
     return (
         <>
-            <div>
+            <div className='contact-item'>
 
-                <input type="text"
+                <input className='contact-item-input' type="text"
                     value={name}
                     onChange={(e) => setName(e.currentTarget.value)} />
                 <br />
-                <input
+                <input className='contact-item-input'
                     type="email"
                     placeholder='Enter Your Email'
                     value={email}
                     onChange={(e) => setEmail(e.currentTarget.value)} />
 
                 <br />
-                <input type="text"
+                <input className='contact-item-input' type="text"
                     value={number}
                     onChange={(e) => setNumber(e.currentTarget.value)}
                 />
                 <br />
-                <button onClick={updated}>Update</button>
-                <button onClick={() => removeContact(contact.id)}>delete</button>
+                <button onClick={updated} className='update'>Update</button>
+                <button onClick={() => removeContact(contact.id)} className='delete'>delete</button>
 
 
             </div>
